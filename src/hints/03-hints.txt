@@ -1,0 +1,169 @@
+This is easiest to do WITHOUT d3.nest(). You can just do a lot of boring .filter() ing again and again
+
+
+
+
+
+If you want to try something a little more advanced, you could also use d3.map (with or without d3.nest), so that you can do something like 
+
+    var temperatureStore = d3.map()
+    ....
+    ....set a list of temperatures for each...
+    ....
+    var datapoints = temperatureStore.get("Beijing")
+
+Or write a function that you can call like
+
+    displayCity("Stockholm")
+
+But hey, whatever you wanna do!
+
+
+
+
+
+Not everything has classes! You might need to add some.
+
+
+
+
+
+
+If you want to know what is the smaller between two numbers
+
+    Math.min(numA, numB)
+
+will do it for you
+
+
+
+
+
+
+
+
+Your scales are different than the standard ones this time! What do you need to update?
+
+
+
+
+
+
+
+
+
+
+
+It probably makes sense to think of the radius as a ratio, too, not just your height/width. What's the best measurement for it to be a ratio to, though? Think about what it's closest to in size, and look at how we calculate a ratio-using height or width in notes.txt
+
+(Honestly this isn't actually important since it's square)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How about your axes? What counts as your axes in this situation?
+
+
+
+
+
+
+
+
+
+
+As always, be careful with variable names and dont overwrite old/existing variables! For example, 'height' and 'width' already exist, so don't use them!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Triple-check that the things you're trying to select have classes!
+
+
+
+
+
+
+
+
+Remember that you're adding things inside of `container`, which has changed the origin to be width / 2, height / 2 - that's how you keep things in the middle for radial stuff!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Things don't seem in the center any more? Like I just said, container keeps everything centered at width / 2, (height / 2) - look up at the top of `ready`. It needs to be adjusted, too!
+
+
+
+
+
+
+
+
+
+
+
+You don't have to continually recolor the city names in the text, you only have to do it once!
+
+
+
+
+
+
+
+
+If you're lazy and like the computer to do all the work, it might help to give them a predictable class and use a d3.nest() + a forEach loop. You'll probably want to console.log a little bit to remember what you're looking at.
+
+OR!
+
+You can do it the long way and filter everything manually. It totally works and it's not THAT many more lines of code.
+
+
+
+
+
+
+
+
+
+
+Remember to use .style for background colors for text outside of d3! And if you want to change the colors of some to be white/black so its more readable, you can use .style('color').
+
+If you're going to change the color and you're using the .forEach method, i recommend saving the color to a variable, THEN using it. Otherwise you'll get tricked by having too many 'd' variables.
+

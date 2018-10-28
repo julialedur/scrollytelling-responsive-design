@@ -1,0 +1,63 @@
+
+Might want to make it responsive first, make life a little easier. Just use notes.txt from class and the hints from chart 1 should be fine.
+
+
+
+
+
+
+
+
+
+
+
+If you try to give everything the class 'West South Central', it won't work, because spaces, right? And U.S. won't work because periods, right? So
+
+    text.toLowerCase().replace(/[a-z]/g, '')
+
+that'll make everything lowercase and get rid of everything that isn't a through z. You need that 'g' after the regex because otherwise it'll only replace the FIRST instance, which is hilarious and something that causes problems for me every day of my life.
+
+
+
+
+
+
+
+
+When you're giving things classes, remember you can give everything the SAME class and differentiate between circles and stuff with `circle.my-class` vs. `path.my-class`
+
+
+
+
+
+
+
+
+Instead of picking them out individually, though, you could ALSO give them all a class that's like, i dunno, 'region-highlight-step', and then do selectAll to grab them all at the same time.
+
+
+
+
+
+
+
+
+
+
+In order to say yes/no to a class, you do this:
+
+  .classed('some-class', d => {
+    // return true if you want it to have that class
+  })
+
+
+
+
+
+
+
+You can hide/remove things by doing .style('visibility', 'hidden') vs. visibility visible, but you could also just append/remove if it's easier.
+
+
+
+
